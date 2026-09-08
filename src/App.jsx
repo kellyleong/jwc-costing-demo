@@ -73,7 +73,8 @@ function currentRoute() {
   const path = APP_BASE && window.location.pathname.startsWith(APP_BASE)
     ? window.location.pathname.slice(APP_BASE.length) || "/"
     : window.location.pathname;
-  return path === "/" ? "/search/subcontractors" : path;
+  const normalizedPath = path.length > 1 ? path.replace(/\/+$/, "") : path;
+  return normalizedPath === "/" ? "/search/subcontractors" : normalizedPath;
 }
 
 function datasetFromRoute(route) {

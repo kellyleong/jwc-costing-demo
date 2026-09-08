@@ -577,7 +577,6 @@ function EvidenceDrawer({ record, onClose, notify }) {
       `Record: ${record.id}`,
       `Document: ${record.sourceDocument}`,
       `Locator: ${record.sourceLocator}`,
-      `SHA-256: ${record.sourceHash}`,
       `Raw value: ${record.originalValue} ${record.originalCurrency}`,
       `Exchange rate used: ${record.exchangeRateUsed}`,
       `MOP value: ${formatMop(record.mopValue)}`,
@@ -604,7 +603,6 @@ function EvidenceDrawer({ record, onClose, notify }) {
       <dl className="evidence-list">
         <div><dt>來源文件</dt><dd>{record.sourceDocument}</dd></div>
         <div><dt>頁／Sheet／Row</dt><dd>{record.sourceLocator}</dd></div>
-        <div><dt>SHA-256</dt><dd title={record.sourceHash}>{record.sourceHash.slice(0, 12)}…{record.sourceHash.slice(-8)}</dd></div>
         <div><dt>原始幣別／值</dt><dd>{record.originalCurrency} {formatMop(record.originalValue)}</dd></div>
         <div><dt>採用匯率</dt><dd>{Number(record.exchangeRateUsed).toFixed(4)} MOP/{record.originalCurrency}</dd></div>
         <div><dt>供應商數量</dt><dd>{record.supplierQuoteQty} {record.standardUnit}</dd></div>

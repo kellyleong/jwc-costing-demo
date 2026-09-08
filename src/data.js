@@ -11,23 +11,6 @@ const sharedAl01 = {
   date: "2026-06-16",
 };
 
-const SOURCE_DOCUMENT_HASHES = {
-  "創澳_AL01_報價_0428_ST.pdf": "80f3b9a16f40e75575360eecbd8cb1b7bff191c08bb5ed3335e6d4b7f4660dd0",
-  "創澳_AL01_補充報價.pdf": "28500f8e07348baa89f35f881ebdb40289eb02157113c6a664ee0c9726f95345",
-  "JWQ-2026-0478.pdf": "a298bdd4ff7cf3b1d1f0bb4e954eb486c2308f832ceee07e1605aeb6f8047404",
-  "JWQ-2026-0511.pdf": "12985f41b989464793f6b4f5c546397c7de6f0c205101ec91b955fb289314281",
-  "JWQ-2026-0533.pdf": "e0cca1271e2de1e42e1d4df870fab3c9e31e1f2e21c0bc8dfbaa088226edfa63",
-  "李明_AL01_報價.pdf": "3347ec4b1933b18521ef78a4d983c9c1abd4823e12979001b84b2e85aef3eeb5",
-  "JWQ-2026-0544.pdf": "3e642cecb6e7c92c96356a0bb420038f29ee5278c5b4e68590d7e8136f73f3a9",
-  "富騰_AL01_材料報價.xlsx": "e3b2fe0f9acb37838e8f8bac40afd5f5192187de855d0ba90b5e41f9a0c89e03",
-  "鋁扣板_Signed.pdf": "709fc701995b07d2a424ea391944c3e8485047bc2e67be1012ec23f5b8d6bf3c",
-  "ABC_Metal_AL01_Quotation.xlsx": "85978a841800943cedc67cb72511cca1c48ea553a50b2e3fb141aec3eb789e5c",
-  "P54425_Costing.xlsx": "c7f819c32d3c172c939fe38472676dc5deb8c5643f5fcb9e7b00d09246279ce7",
-  "P54425_Client_Quotation.xlsx": "a6aeff1ce3c0ac7e91de71ff1187e6887779326070e0ce924b94903a4b05840b",
-  "P53218_Final_Quotation.xlsx": "3046d8e09e776dd6fa282b24ac04478848a8faf83a44635e15620f2639b759ca",
-  "P52680_Final_Quotation.xlsx": "681e8cf86dbf3ec984de01a0b87312f12d46b183a08dd1ddaf6f5dd913d02d9c",
-};
-
 export const DATASETS = {
   subcontractors: {
     code: "S1",
@@ -49,7 +32,7 @@ export const DATASETS = {
   },
 };
 
-const RAW_PRICE_RECORDS = [
+export const PRICE_RECORDS = [
   {
     ...sharedAl01,
     id: "S1-CA-AL01-001",
@@ -535,11 +518,6 @@ const RAW_PRICE_RECORDS = [
     sourceLocator: "AL · Row 22",
   },
 ];
-
-export const PRICE_RECORDS = RAW_PRICE_RECORDS.map((record) => ({
-  ...record,
-  sourceHash: SOURCE_DOCUMENT_HASHES[record.sourceDocument],
-}));
 
 export const INITIAL_SELECTION = [
   "S1-CA-AL01-001",
